@@ -60,4 +60,5 @@ public class MovieManagerTest {
         String[] actual = manager.FindLast();
         Assertions.assertArrayEquals(expected, actual);
     }
+    
 }
