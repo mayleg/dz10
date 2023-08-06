@@ -6,6 +6,7 @@ public class MovieManager {
         this.limit = 5;
     }
     public MovieManager(int limit) {
+
         this.limit = limit;
     }
 
@@ -30,7 +31,7 @@ public class MovieManager {
             resultLength = limit;
         }
         String[] tmp = new String[resultLength];
-        for (int i = 0; i < movies.length; i++) {
+        for (int i = 0; i < resultLength; i++) {
             tmp[i] = movies[movies.length - 1 - i];
         }
         return tmp;

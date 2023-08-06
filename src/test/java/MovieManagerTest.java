@@ -61,4 +61,32 @@ public class MovieManagerTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void testlast3() {
+        MovieManager manager = new MovieManager();
+
+        manager.addMovies("Film 1");
+        manager.addMovies("Film 2");
+        manager.addMovies("Film 3");
+        manager.addMovies("Film 4");
+        manager.addMovies("Film 5");
+        manager.addMovies("Film 6");
+
+        String[] expected = {"Film 6", "Film 5", "Film 4", "Film 3", "Film 2"};
+        String[] actual = manager.FindLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void customLimit() {
+        MovieManager manager = new MovieManager(2);
+
+        manager.addMovies("Film 1");
+        manager.addMovies("Film 2");
+        manager.addMovies("Film 3");
+
+        String[] expected = {"Film 3", "Film 2"};
+        String[] actual = manager.FindLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
